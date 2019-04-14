@@ -25,7 +25,7 @@ const styles = theme => ({
 		height: "100%",
 		zIndex: "1150",
 		position: "fixed",
-		[theme.breakpoints.down('md')]: {
+		[theme.breakpoints.down('sm')]: {
 			width: "90%"
 		},
 	},
@@ -48,7 +48,7 @@ const styles = theme => ({
 		flexDirection: 'column',
 		position: 'fixed',
 		top: '1%',
-		[theme.breakpoints.down('md')]: {
+		[theme.breakpoints.down('sm')]: {
 			width: "88%",
 			top: ".5%"
 		},
@@ -61,7 +61,7 @@ const styles = theme => ({
 		flexDirection: 'column',
 		position: 'absolute',
 		top: '1%',
-		[theme.breakpoints.down('md')]: {
+		[theme.breakpoints.down('sm')]: {
 			top: ".5%"
 		},
 		left: '1%',

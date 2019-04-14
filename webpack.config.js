@@ -11,8 +11,7 @@ module.exports = ( env, argv ) => {
         'case-sensitive-paths-webpack-plugin' )
     const APP_DIR = path.resolve( __dirname, 'src' )
     const production = argv.mode === 'production'
-    var filename = !production ? '[name].bundle.js' :
-        '[name].[hash].bundle.js'
+    var filename = '[name].js'
     const autoprefixer = require( 'autoprefixer' )
     const plugins = [
         new webpack.DefinePlugin( {
