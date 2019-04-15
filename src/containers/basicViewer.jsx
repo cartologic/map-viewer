@@ -94,6 +94,7 @@ class BasicViewer extends React.Component {
             }
         }
         let savePromises = []
+        let keywords = currentMap && currentMap.id ? currentMap.keywords : []
         let data = {
             title: currentMap.title,
             description: currentMap.description,
@@ -101,6 +102,7 @@ class BasicViewer extends React.Component {
             zoom,
             rotation,
             center,
+            keywords,
             layers
         }
         if (currentMap.id) {
@@ -108,10 +110,14 @@ class BasicViewer extends React.Component {
             this.getMapThumbnail().then(thumb => {
                 let formdata = new FormData()
                 formdata.append('thumbnail', thumb)
-                savePromises.push(saveMapThumbnail(currentMap.id, formdata))
-            })
-            Promise.all(savePromises).then(results => this.setState({ mapSaving: false })).catch(err => {
-                console.error(err)
+                saveMapThumbnail(currentMap.id, formdata).then(resp => {
+                    this.setState({ mapSaving: false })
+                }).catch(err => {
+                    console.log(err);
+                    this.setState({ mapSaving: false })
+                })
+            }).catch(err => {
+                console.log(err);
                 this.setState({ mapSaving: false })
             })
         } else {
