@@ -20,7 +20,6 @@ import Pagination from "material-ui-flat-pagination"
 import PropTypes from 'prop-types'
 import React from 'react'
 import Select from '@material-ui/core/Select'
-import { connect } from 'react-redux'
 import { withStyles } from '@material-ui/core/styles'
 
 const styles = theme => ({
@@ -75,8 +74,9 @@ class AddLayers extends React.PureComponent {
 				map.removeLayer(lyr)
 				setStateKey('mapLayers', mapLayers.filter(lyr => {
 					const metadata = lyr.get('metadata')
-					return metadata && metadata.name !== name
+					return metadata && metadata.identifier !== id
 				}))
+				Promise.all(LegendService.getLegends(map)).then(result => setStateKey('legends', result))
 			}
 		})
 	}
@@ -179,15 +179,7 @@ class AddLayers extends React.PureComponent {
 }
 AddLayers.propTypes = {
 	classes: PropTypes.object.isRequired,
-	reduxMap: PropTypes.object.isRequired,
 	setComponent: PropTypes.func.isRequired,
 }
 AddLayers.contextType = BasicViewerContext
-const mapStateToProps = (state) => {
-	return {
-		reduxMap: state.map,
-	}
-}
-
-const App = connect(mapStateToProps, null)(AddLayers)
-export default withStyles(styles)(App)
+export default withStyles(styles)(AddLayers)

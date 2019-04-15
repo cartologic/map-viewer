@@ -5,7 +5,8 @@ module.exports = ( env, argv ) => {
         "optimize-css-assets-webpack-plugin" )
     var webpack = require( 'webpack' )
     const UglifyJsPlugin = require( 'uglifyjs-webpack-plugin' )
-    const BundleAnalyzerPlugin = require( 'webpack-bundle-analyzer' ).BundleAnalyzerPlugin
+    const BundleAnalyzerPlugin = require( 'webpack-bundle-analyzer' )
+        .BundleAnalyzerPlugin
     var path = require( 'path' )
     const CaseSensitivePathsPlugin = require(
         'case-sensitive-paths-webpack-plugin' )
@@ -23,8 +24,8 @@ module.exports = ( env, argv ) => {
         new CaseSensitivePathsPlugin(),
         new CleanWebpackPlugin( [ 'dist' ] ),
         new MiniCssExtractPlugin( {
-            filename: !production ? '[name].css' : '[name].[hash].css',
-            chunkFilename: !production ? '[id].css' : '[id].[hash].css',
+            filename: '[name].css',
+            chunkFilename: '[id].css'
         } ),
 
     ]

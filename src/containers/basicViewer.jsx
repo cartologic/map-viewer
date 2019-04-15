@@ -13,12 +13,10 @@ import FeaturesHelper from 'cartoview-sdk/helpers/FeaturesHelper'
 import LegendService from '../services/Legend'
 import MapConfigService from '../services/MapLoadService'
 import Overlay from 'ol/overlay'
-import { Provider } from 'react-redux'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import proj from 'ol/proj'
 import proj4 from 'proj4'
-import store from '../store'
 
 proj.setProj4(proj4)
 
@@ -234,13 +232,9 @@ class BasicViewer extends React.Component {
     }
     render() {
         return (
-            <Provider store={store}>
-                <React.Fragment>
-                    <BasicViewerProvider value={this.getContextValue()}>
-                        <ContentGrid />
-                    </BasicViewerProvider>
-                </React.Fragment>
-            </Provider>
+            <BasicViewerProvider value={this.getContextValue()}>
+                <ContentGrid />
+            </BasicViewerProvider>
         )
     }
 }
