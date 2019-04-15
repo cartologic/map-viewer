@@ -4,6 +4,7 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions'
 import DialogContent from '@material-ui/core/DialogContent'
 import DialogTitle from '@material-ui/core/DialogTitle'
+import { Loader } from './CommonComponents'
 import PropTypes from 'prop-types'
 import React from 'react'
 import TextField from '@material-ui/core/TextField'
@@ -29,7 +30,7 @@ class SaveDialog extends React.Component {
 	};
 	render() {
 		const { handleClose, open, classes } = this.props
-		const { currentMap, saveMap } = this.context
+		const { currentMap, saveMap, mapSaving } = this.context
 		return (
 			<div>
 				<Dialog
@@ -61,10 +62,11 @@ class SaveDialog extends React.Component {
 						/>
 					</DialogContent>
 					<DialogActions>
-						<Button onClick={handleClose} color="primary">
+						<Button disabled={mapSaving} onClick={handleClose} color="primary">
 							{"Cancel"}
 						</Button>
-						<Button onClick={saveMap} color="primary">
+						<Button disabled={mapSaving} onClick={saveMap} color="primary">
+							{mapSaving && <Loader size={20} />}
 							{"Save"}
 						</Button>
 					</DialogActions>

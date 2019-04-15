@@ -110,7 +110,10 @@ class BasicViewer extends React.Component {
                 formdata.append('thumbnail', thumb)
                 savePromises.push(saveMapThumbnail(currentMap.id, formdata))
             })
-            Promise.all(savePromises).then(results => this.setState({ mapSaving: false }))
+            Promise.all(savePromises).then(results => this.setState({ mapSaving: false })).catch(err => {
+                console.error(err)
+                this.setState({ mapSaving: false })
+            })
         } else {
             createMap(JSON.stringify(data)).then(resp => {
                 if (resp.status < 400) {
@@ -119,6 +122,10 @@ class BasicViewer extends React.Component {
                         let formdata = new FormData()
                         formdata.append('thumbnail', thumb)
                         savePromises.push(saveMapThumbnail(resp.data.id, formdata))
+                        Promise.all(savePromises).then(results => this.setState({ mapSaving: false })).catch(err => {
+                            console.error(err)
+                            this.setState({ mapSaving: false })
+                        })
                     })
                 }
             })
