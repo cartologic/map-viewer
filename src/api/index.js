@@ -16,8 +16,8 @@ export function mapJsonSerializer( mapJson ) {
             constrainRotation: mapJson.constrain_rotation,
             rotation: mapJson.rotation | 0,
             enableRotation: mapJson.enable_rotation,
-            extent: mapJson.bounding_box.length > 0 ? mapJson
-                .bounding_box : undefined,
+            extent: mapJson.bounding_box && mapJson.bounding_box.length >
+                0 ? mapJson.bounding_box : undefined,
             maxZoom: mapJson.max_zoom,
             minZoom: mapJson.min_zoom,
             projection: mapJson.projection,
