@@ -32,12 +32,15 @@ class BasicViewer extends React.Component {
             activeFeature: 0,
             legends: [],
             mapSaving: false,
+            mapSavingMessage: null,
             mapLayers: [],
             mouseCoordinates: [0, 0],
             mapLoading: false,
             currentMap: {
                 title: "No Title Provided",
-                description: "No Description Provided"
+                description: "No Description Provided",
+                abstract: "No Abstract Provided",
+                keywords: [],
             },
         }
     }
@@ -94,31 +97,33 @@ class BasicViewer extends React.Component {
             }
         }
         let savePromises = []
-        let keywords = currentMap && currentMap.id ? currentMap.keywords : []
         let data = {
             title: currentMap.title,
             description: currentMap.description,
+            abstract: currentMap.abstract,
+            keywords: currentMap.keywords,
             projection,
             zoom,
             rotation,
             center,
-            keywords,
             layers
         }
+        let successMessage = "Map has been Saved!"
+        let failtureMessage = "Failed to Save Map!"
         if (currentMap.id) {
             savePromises.push(saveMap(currentMap.id, JSON.stringify(data)))
             this.getMapThumbnail().then(thumb => {
                 let formdata = new FormData()
                 formdata.append('thumbnail', thumb)
                 saveMapThumbnail(currentMap.id, formdata).then(resp => {
-                    this.setState({ mapSaving: false })
+                    this.setState({ mapSaving: false, mapSavingMessage: successMessage })
                 }).catch(err => {
                     console.log(err);
-                    this.setState({ mapSaving: false })
+                    this.setState({ mapSaving: false, mapSavingMessage: failtureMessage })
                 })
             }).catch(err => {
                 console.log(err);
-                this.setState({ mapSaving: false })
+                this.setState({ mapSaving: false, mapSavingMessage: failtureMessage })
             })
         } else {
             createMap(JSON.stringify(data)).then(resp => {
@@ -128,9 +133,9 @@ class BasicViewer extends React.Component {
                         let formdata = new FormData()
                         formdata.append('thumbnail', thumb)
                         savePromises.push(saveMapThumbnail(resp.data.id, formdata))
-                        Promise.all(savePromises).then(results => this.setState({ mapSaving: false })).catch(err => {
+                        Promise.all(savePromises).then(results => this.setState({ mapSaving: false, mapSavingMessage: successMessage })).catch(err => {
                             console.error(err)
-                            this.setState({ mapSaving: false })
+                            this.setState({ mapSaving: false, mapSavingMessage: failtureMessage })
                         })
                     })
                 }

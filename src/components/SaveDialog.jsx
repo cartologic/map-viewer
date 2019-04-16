@@ -26,7 +26,11 @@ class SaveDialog extends React.Component {
 	handleChange = name => event => {
 		const { currentMap, setStateKey } = this.context
 		let map = currentMap ? currentMap : {}
-		setStateKey('currentMap', { ...map, [name]: event.target.value })
+		let value = event.target.value
+		if (name === "keywords") {
+			value = value.split(',')
+		}
+		setStateKey('currentMap', { ...map, [name]: value })
 	};
 	render() {
 		const { handleClose, open, classes } = this.props
@@ -58,6 +62,27 @@ class SaveDialog extends React.Component {
 							value={currentMap.description}
 							onChange={this.handleChange('description')}
 							margin="normal"
+							variant="outlined"
+						/>
+						<TextField
+							id="outlined-name"
+							label="Abstract"
+							fullWidth
+							className={classes.textField}
+							value={currentMap.abstract}
+							onChange={this.handleChange('abstract')}
+							margin="normal"
+							variant="outlined"
+						/>
+						<TextField
+							id="outlined-name"
+							label="Keywords"
+							fullWidth
+							className={classes.textField}
+							value={currentMap.keywords.join(',')}
+							onChange={this.handleChange('keywords')}
+							margin="normal"
+							helperText="A comma-separated list of tags."
 							variant="outlined"
 						/>
 					</DialogContent>

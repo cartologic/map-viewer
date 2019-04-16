@@ -1,9 +1,9 @@
+import { CartoviewSnackBar, CustomizedSnackBar } from './CommonComponents'
 import React, { Component } from 'react'
 
 import { BasicViewerContext } from '../context'
 import CartoviewDrawer from './Drawer'
 import CartoviewPopup from './Popup'
-import { CartoviewSnackBar } from './CommonComponents'
 import Grid from '@material-ui/core/Grid'
 import IconButton from '@material-ui/core/IconButton'
 import MapViewer from './MapViewer'
@@ -73,7 +73,7 @@ function Transition(props) {
 }
 class ContentGrid extends Component {
 	render() {
-		const { drawerOpen, toggleDrawer } = this.context
+		const { drawerOpen, toggleDrawer, mapSaving, mapSavingMessage, setStateKey } = this.context
 		const { classes } = this.props
 		return (
 			<div className={classes.root}>
@@ -104,7 +104,13 @@ class ContentGrid extends Component {
 						<CartoviewPopup />
 					</Grid>
 				</Grid>
-				<CartoviewSnackBar/>
+				<CartoviewSnackBar />
+				<CustomizedSnackBar
+					open={!mapSaving && mapSavingMessage}
+					message={mapSavingMessage}
+					variant="info"
+					handleClose={() => setStateKey('mapSavingMessage', null)}
+				/>
 			</div>
 		)
 	}

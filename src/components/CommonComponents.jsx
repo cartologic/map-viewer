@@ -3,6 +3,7 @@ import React, { useContext } from 'react'
 import { BasicViewerContext } from '../context'
 import CircularProgress from '@material-ui/core/CircularProgress'
 import LinearProgress from '@material-ui/core/LinearProgress'
+import MySnackbarContentWrapper from './SnackBarContent'
 import PropTypes from 'prop-types'
 import Snackbar from '@material-ui/core/Snackbar'
 import Typography from '@material-ui/core/Typography'
@@ -49,4 +50,38 @@ export const CartoviewSnackBar = (props) => {
             'aria-describedby': 'message-id',
         }}
         message={messageComponent} />
+}
+export const CustomizedSnackBar = (props) => {
+    const { message, open, autoHideDuration, handleClose, variant } = props
+    return (<Snackbar
+        anchorOrigin={{
+            vertical: 'bottom',
+            horizontal: 'left',
+        }}
+        open={open}
+        autoHideDuration={autoHideDuration}
+        onClose={handleClose}
+    >
+        <MySnackbarContentWrapper
+            onClose={handleClose}
+            variant={variant}
+            message={message}
+        />
+    </Snackbar>)
+}
+CustomizedSnackBar.propTypes = {
+    message: PropTypes.string,
+    open: PropTypes.bool,
+    autoHideDuration: PropTypes.number.isRequired,
+    variant: PropTypes.string.isRequired,
+    handleClose: PropTypes.func.isRequired,
+}
+CustomizedSnackBar.defaultProps = {
+    handleClose: function () {
+
+    },
+    open: false,
+    autoHideDuration: 6000,
+    variant: "success",
+    message: "This is a success message!"
 }
