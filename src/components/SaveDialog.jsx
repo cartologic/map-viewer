@@ -1,14 +1,16 @@
+import { FileUpload, Loader } from './CommonComponents'
+
 import { BasicViewerContext } from '../context'
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions'
 import DialogContent from '@material-ui/core/DialogContent'
 import DialogTitle from '@material-ui/core/DialogTitle'
-import { Loader } from './CommonComponents'
 import PropTypes from 'prop-types'
 import React from 'react'
 import TextField from '@material-ui/core/TextField'
 import { withStyles } from '@material-ui/core/styles'
+
 const styles = theme => ({
 	root: {
 		height: "100%",
@@ -31,6 +33,11 @@ class SaveDialog extends React.Component {
 			value = value.split(',')
 		}
 		setStateKey('currentMap', { ...map, [name]: value })
+	};
+	handleFileChange = file => {
+		const { currentMap, setStateKey } = this.context
+		let map = currentMap ? currentMap : {}
+		setStateKey('currentMap', { ...map, featured_image: file })
 	};
 	render() {
 		const { handleClose, open, classes } = this.props
@@ -56,16 +63,6 @@ class SaveDialog extends React.Component {
 						/>
 						<TextField
 							id="outlined-name"
-							label="Description"
-							fullWidth
-							className={classes.textField}
-							value={currentMap.description}
-							onChange={this.handleChange('description')}
-							margin="normal"
-							variant="outlined"
-						/>
-						<TextField
-							id="outlined-name"
 							label="Abstract"
 							fullWidth
 							className={classes.textField}
@@ -85,6 +82,19 @@ class SaveDialog extends React.Component {
 							helperText="A comma-separated list of tags."
 							variant="outlined"
 						/>
+						<TextField
+							id="outlined-name"
+							label="Description"
+							fullWidth
+							multiline
+							rows="5"
+							className={classes.textField}
+							value={currentMap.description}
+							onChange={this.handleChange('description')}
+							margin="normal"
+							variant="outlined"
+						/>
+						<FileUpload handleFiles={(files) => this.handleFileChange(files[0])} accept={'image/png'} label="Drop Your Featured Image Here" />
 					</DialogContent>
 					<DialogActions>
 						<Button disabled={mapSaving} onClick={handleClose} color="primary">

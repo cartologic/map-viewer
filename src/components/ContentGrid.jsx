@@ -106,7 +106,7 @@ class ContentGrid extends Component {
 				</Grid>
 				<CartoviewSnackBar />
 				<CustomizedSnackBar
-					open={!mapSaving && mapSavingMessage}
+					open={(!mapSaving && mapSavingMessage !== null)}
 					message={mapSavingMessage}
 					variant="info"
 					handleClose={() => setStateKey('mapSavingMessage', null)}

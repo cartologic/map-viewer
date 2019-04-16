@@ -7,6 +7,7 @@ import MySnackbarContentWrapper from './SnackBarContent'
 import PropTypes from 'prop-types'
 import Snackbar from '@material-ui/core/Snackbar'
 import Typography from '@material-ui/core/Typography'
+import { useDropzone } from 'react-dropzone';
 
 export const Loader = (props) => {
     const { size, thickness, align, type } = props
@@ -84,4 +85,45 @@ CustomizedSnackBar.defaultProps = {
     autoHideDuration: 6000,
     variant: "success",
     message: "This is a success message!"
+}
+
+export function FileUpload(props) {
+    const { handleFiles, multiple, accept, label } = props
+    const { acceptedFiles, getRootProps, getInputProps } = useDropzone({
+        onDrop: handleFiles,
+        multiple,
+        accept
+    })
+
+    const files = acceptedFiles.map(file => (
+        <li key={file.name}>
+            {file.name} - {file.size} bytes
+    </li>
+    ))
+    return (
+        <section className="container">
+            <div {...getRootProps({ className: 'dropzone disabled' })}>
+                <input {...getInputProps()} />
+                <p>{label}</p>
+            </div>
+            <aside>
+                <h4>{"Files"}</h4>
+                <ul>{files}</ul>
+            </aside>
+        </section>
+    );
+}
+FileUpload.propTypes = {
+    handleFiles: PropTypes.func.isRequired,
+    multiple: PropTypes.bool,
+    label: PropTypes.string,
+    accept: PropTypes.oneOfType([PropTypes.string, PropTypes.string])
+}
+FileUpload.defaultProps = {
+    handleFiles: function (files) {
+        console.log(files)
+    },
+    multiple: false,
+    accept: '*/*',
+    label: "Drag 'n' drop some files here, or click to select files"
 }

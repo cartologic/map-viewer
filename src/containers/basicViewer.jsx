@@ -41,6 +41,7 @@ class BasicViewer extends React.Component {
                 description: "No Description Provided",
                 abstract: "No Abstract Provided",
                 keywords: [],
+                featured_image: null
             },
         }
     }
@@ -108,6 +109,7 @@ class BasicViewer extends React.Component {
             center,
             layers
         }
+        let featured_image = currentMap.featured_image
         let successMessage = "Map has been Saved!"
         let failtureMessage = "Failed to Save Map!"
         if (currentMap.id) {
@@ -115,6 +117,9 @@ class BasicViewer extends React.Component {
             this.getMapThumbnail().then(thumb => {
                 let formdata = new FormData()
                 formdata.append('thumbnail', thumb)
+                if (featured_image && featured_image instanceof File) {
+                    formdata.append('featured_image', featured_image)
+                }
                 saveMapThumbnail(currentMap.id, formdata).then(resp => {
                     this.setState({ mapSaving: false, mapSavingMessage: successMessage })
                 }).catch(err => {
@@ -132,6 +137,9 @@ class BasicViewer extends React.Component {
                     this.getMapThumbnail().then(thumb => {
                         let formdata = new FormData()
                         formdata.append('thumbnail', thumb)
+                        if (featured_image && featured_image instanceof File) {
+                            formdata.append('featured_image', featured_image)
+                        }
                         savePromises.push(saveMapThumbnail(resp.data.id, formdata))
                         Promise.all(savePromises).then(results => this.setState({ mapSaving: false, mapSavingMessage: successMessage })).catch(err => {
                             console.error(err)
