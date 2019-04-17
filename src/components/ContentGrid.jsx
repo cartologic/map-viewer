@@ -4,10 +4,9 @@ import React, { Component } from 'react'
 import { BasicViewerContext } from '../context'
 import CartoviewDrawer from './Drawer'
 import CartoviewPopup from './Popup'
+import GoogleLikeInput from './SearchInput'
 import Grid from '@material-ui/core/Grid'
-import IconButton from '@material-ui/core/IconButton'
 import MapViewer from './MapViewer'
-import MenuIcon from '@material-ui/icons/Menu'
 import Paper from '@material-ui/core/Paper'
 import PropTypes from 'prop-types'
 import Slide from '@material-ui/core/Slide'
@@ -55,7 +54,7 @@ const styles = theme => ({
 		left: '1%',
 	},
 	DrawerOpenBar: {
-		width: '97% !important',
+		// width: '97% !important',
 		zIndex: '12',
 		display: 'flex',
 		flexDirection: 'column',
@@ -64,7 +63,7 @@ const styles = theme => ({
 		[theme.breakpoints.down('sm')]: {
 			top: ".5%"
 		},
-		left: '1%',
+		left: '1.5%',
 	}
 })
 
@@ -79,12 +78,12 @@ class ContentGrid extends Component {
 			<div className={classes.root}>
 				<div className={classnames({ [classes.drawer]: drawerOpen ? true : false, [classes.drawerClose]: drawerOpen ? false : true })}>
 					<Paper className={classnames(classes.DrawerBar, { [classes.DrawerOpenBar]: drawerOpen })}>
-						<div className="element-flex ">
+						{/* <div className="element-flex ">
 							<IconButton onClick={toggleDrawer} color="default" aria-label="Open Menu">
 								<MenuIcon />
 							</IconButton>
-							{/* <GeoCodeSearchInput config={this.geoCodingProps()} /> */}
-						</div>
+						</div> */}
+						<GoogleLikeInput menuClickHandle={toggleDrawer} />
 						{/* {!childrenProps.geocodeSearchLoading && childrenProps.geocodingResult.length > 0 &&
 									<GeoCodeResult
 										resetGeocoding={childrenProps.resetGeocoding}
