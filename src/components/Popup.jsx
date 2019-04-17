@@ -152,6 +152,7 @@ class CartoviewPopup extends React.PureComponent {
 			featureIdentifyResult,
 			featureIdentifyLoading,
 			activeFeature,
+			popupTemplateing
 		} = this.context
 		const nextButtonVisible = (featureIdentifyResult.length > 0 &&
 			activeFeature != featureIdentifyResult.length - 1)
@@ -200,18 +201,11 @@ class CartoviewPopup extends React.PureComponent {
 						</IconButton>
 					</div>
 					<div className={classnames("cartoview-popup-content", { [classes.content]: true })}>{featureIdentifyResult.length > 0 && <div>
-						<FeatureAttributesTable currentFeature={currentFeature} />
+						{!popupTemplateing(currentFeature) && <FeatureAttributesTable currentFeature={currentFeature} />}
+						{popupTemplateing(currentFeature) && <div dangerouslySetInnerHTML={{ __html: popupTemplateing(currentFeature) }}></div>}
 					</div>}
 						{featureIdentifyResult.length == 0 && !featureIdentifyLoading && <Message message={"No Features at this Point"} type={"subheading"} />}
 					</div>
-					{/* <div className="cartoview-popup-actions center">
-						<div ref={(input) => { this.zoomToButton = input }} >
-							{(featureIdentifyResult.length != 0 && !featureIdentifyLoading) && <Button color="default" className={classes.button} dense={"true"}>
-								<ZoomIcon />
-								<Typography type="caption" align="left" noWrap={false} color="inherit">{`Zoom To Feature`}</Typography>
-							</Button>}
-						</div>
-					</div> */}
 				</Paper>
 			</div>
 		)

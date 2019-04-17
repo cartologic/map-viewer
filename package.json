@@ -76,6 +76,7 @@
         "lodash": "^4.17.11",
         "material-ui-flat-pagination": "^3.2.0",
         "merge-images": "^1.1.0",
+        "mustache": "^3.0.1",
         "net": "^1.0.2",
         "proj4": "^2.5.0",
         "prop-types": "^15.6.2",

@@ -12,6 +12,7 @@ import FeatureIdentify from '../services/Identify'
 import FeaturesHelper from 'cartoview-sdk/helpers/FeaturesHelper'
 import LegendService from '../services/Legend'
 import MapConfigService from '../services/MapLoadService'
+import Mustache from 'mustache'
 import Overlay from 'ol/overlay'
 import React from 'react'
 import ReactDOM from 'react-dom'
@@ -47,6 +48,15 @@ class BasicViewer extends React.Component {
     }
     setStateKey = (key, value, callback = () => { }) => {
         this.setState({ [key]: value }, () => { callback() })
+    }
+    popupTemplateing = (feature) => {
+        const { currentMap } = this.state
+        let template = null
+        if (currentMap.popup_template && feature) {
+            let data = feature.getProperties()
+            template = Mustache.render(template, data)
+        }
+        return template
     }
     changeShowPopup = () => {
         const { showPopup } = this.state
@@ -230,7 +240,8 @@ class BasicViewer extends React.Component {
             addOverlay: this.addOverlay,
             setStateKey: this.setStateKey,
             zoomToExtent: this.zoomToExtent,
-            saveMap: this.saveMap
+            saveMap: this.saveMap,
+            popupTemplateing: this.popupTemplateing
         }
     }
     identify = (evt) => {
