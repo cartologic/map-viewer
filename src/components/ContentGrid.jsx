@@ -54,7 +54,7 @@ const styles = theme => ({
 		left: '1%',
 	},
 	DrawerOpenBar: {
-		// width: '97% !important',
+		width: '95% !important',
 		zIndex: '12',
 		display: 'flex',
 		flexDirection: 'column',
