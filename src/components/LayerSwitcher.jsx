@@ -27,12 +27,7 @@ const styles = theme => ({
 const LayerItem = SortableElement(({ layer, layerIndex, handleLayerVisibilty, zoomToLayerData, handleLayerOpacity }) => {
 	const metadata = layer.get('metadata')
 	const layerTitle = metadata['title']
-	console.log(metadata['bbox'])
-	let bbox = metadata['bbox']
-	for (let index = 0; index < bbox.length; index++) {
-		const element = bbox[index]
-		bbox[index] = parseFloat(element)
-	}
+	const bbox = metadata['bbox'].map(coord => parseFloat(coord))
 	const projection = metadata['projection']
 	return (
 		<ListItem disableGutters={true} className="layer-switcher-item dense">

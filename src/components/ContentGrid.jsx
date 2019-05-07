@@ -47,6 +47,10 @@ const styles = theme => ({
 		flexDirection: 'column',
 		position: 'fixed',
 		top: '1%',
+		[theme.breakpoints.down('md')]: {
+			width: '28%',
+			top: ".5%"
+		},
 		[theme.breakpoints.down('sm')]: {
 			width: "88%",
 			top: ".5%"
@@ -61,6 +65,7 @@ const styles = theme => ({
 		position: 'absolute',
 		top: '1%',
 		[theme.breakpoints.down('sm')]: {
+			width: "95% !important",
 			top: ".5%"
 		},
 		left: '1.5%',

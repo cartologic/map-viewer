@@ -68,55 +68,18 @@ const CartoviewDrawer = (props) => {
 						</ListItemIcon>
 						<ListItemText primary="Add Layers" />
 					</ListItem>
-					<CollapsibleListItem open={false} title="Maps" icon={<MapIcon />}>
-						<div>
-							<TextField
-								id="outlined-name"
-								label="Maps"
-								fullWidth
-								className={classes.textField}
-								margin="normal"
-								variant="outlined"
-							/>
-						</div>
-					</CollapsibleListItem>
-					<CollapsibleListItem open={false} title="Indicators" icon={<BarChartIcon />}>
-						<div>
-							<TextField
-								id="outlined-name"
-								label="Indicators"
-								fullWidth
-								className={classes.textField}
-								margin="normal"
-								variant="outlined"
-							/>
-						</div>
-					</CollapsibleListItem>
 					<CollapsibleListItem open={false} title="Layers" icon={<LayersIcons />}>
 						<CartoviewLayerSwitcher />
 					</CollapsibleListItem>
 					<CollapsibleListItem open={false} title="Legend" icon={<ImageIcon />}>
 						<CartoviewLegends />
 					</CollapsibleListItem>
-					<CollapsibleListItem open={false} title="Base Maps" icon={<MapRoundedIcon />}>
-						<div className={classes.baseMaps}>
-							<RadioGroup
-								aria-label="Gender"
-								name="gender1"
-								className={classes.group}
-							>
-								<FormControlLabel value="female" control={<Radio />} label="Base Map 1" />
-								<FormControlLabel value="male" control={<Radio />} label="Base Map 2" />
-								<FormControlLabel value="other" control={<Radio />} label="Base Map 3" />
-							</RadioGroup>
-						</div>
-					</CollapsibleListItem>
-					<ListItem button onClick={() => { }}>
+					{/* <ListItem button onClick={() => { }}>
 						<ListItemIcon>
 							<PrintIcon />
 						</ListItemIcon>
 						<ListItemText primary="Print" />
-					</ListItem>
+					</ListItem> */}
 				</List>}
 				{component == "AddLayers" && <AddLayers setComponent={setComponent} />}
 			</Paper>
