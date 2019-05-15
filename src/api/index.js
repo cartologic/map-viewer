@@ -49,7 +49,7 @@ export function fetchServerLayers( serverId, limit = 20, offset = 0 ) {
     } )
 }
 export function fetchMapById( mapId ) {
-    return apiInstance.get( `maps/${mapId}/map_json/`, {
+    return apiInstance.get( `maps/${mapId}/map_config/`, {
         timeout: 30000,
     } )
 }
