@@ -91,20 +91,24 @@ class BasicViewer extends React.Component {
         this.setState({ drawerOpen: !drawerOpen })
     }
     save = () => {
-        const { currentMap, map } = this.state
+        const { currentMap, map, mapLayers } = this.state
         const view = map.getView()
         const projection = view.getProjection().getCode()
         const zoom = view.getZoom()
         const rotation = view.getRotation()
         const center = view.getCenter()
         let layers = []
-        let mapLayers = [...map.getLayers().getArray()]
-        mapLayers = mapLayers.reverse()
+        let render_options = {
+            ordering: {
+
+            }
+        }
         for (let index = 0; index < mapLayers.length; index++) {
-            const layer = mapLayers[index];
+            const layer = mapLayers[index]
             const metadata = layer.get('metadata')
             if (metadata) {
                 layers.push(metadata.identifier)
+                render_options.ordering[metadata.identifier] = index
             }
         }
         let savePromises = []
@@ -117,7 +121,8 @@ class BasicViewer extends React.Component {
             zoom,
             rotation,
             center,
-            layers
+            layers,
+            render_options
         }
         let featured_image = currentMap.featured_image
         let successMessage = "Map has been Saved!"

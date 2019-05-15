@@ -95123,17 +95123,17 @@ function (_React$Component) {
     _defineProperty(_assertThisInitialized(_this), "save", function () {
       var _this$state = _this.state,
           currentMap = _this$state.currentMap,
-          map = _this$state.map;
+          map = _this$state.map,
+          mapLayers = _this$state.mapLayers;
       var view = map.getView();
       var projection = view.getProjection().getCode();
       var zoom = view.getZoom();
       var rotation = view.getRotation();
       var center = view.getCenter();
       var layers = [];
-
-      var mapLayers = _toConsumableArray(map.getLayers().getArray());
-
-      mapLayers = mapLayers.reverse();
+      var render_options = {
+        ordering: {}
+      };
 
       for (var index = 0; index < mapLayers.length; index++) {
         var layer = mapLayers[index];
@@ -95141,6 +95141,7 @@ function (_React$Component) {
 
         if (metadata) {
           layers.push(metadata.identifier);
+          render_options.ordering[metadata.identifier] = index;
         }
       }
 
@@ -95154,7 +95155,8 @@ function (_React$Component) {
         zoom: zoom,
         rotation: rotation,
         center: center,
-        layers: layers
+        layers: layers,
+        render_options: render_options
       };
       var featured_image = currentMap.featured_image;
       var successMessage = "Map has been Saved!";
@@ -95524,6 +95526,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var cartoview_sdk_helpers_LayersHelper__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(cartoview_sdk_helpers_LayersHelper__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
@@ -95531,8 +95535,6 @@ function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread n
 function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
 
 function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -95559,7 +95561,9 @@ function () {
       var view = map.getView();
       var mapResolution = view.getResolution();
       var mapProjection = view.getProjection();
-      var wmsLayers = cartoview_sdk_helpers_LayersHelper__WEBPACK_IMPORTED_MODULE_2___default.a.getLayers(map.getLayers().getArray()).reverse();
+
+      var wmsLayers = _toConsumableArray(cartoview_sdk_helpers_LayersHelper__WEBPACK_IMPORTED_MODULE_2___default.a.getLayers(map.getLayers().getArray())).reverse();
+
       var wfsPromise = new Promise(function (resolve) {
         var layerFeatures = {};
         map.forEachFeatureAtPixel(evt.pixel, function (feature, layer) {
@@ -95629,6 +95633,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var merge_images__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! merge-images */ "./node_modules/merge-images/dist/index.es2015.js");
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils */ "./src/services/utils.jsx");
 /* harmony import */ var _services_MapLoadService__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/MapLoadService */ "./src/services/MapLoadService.jsx");
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -95848,7 +95860,8 @@ function () {
   }, {
     key: "getLegends",
     value: function getLegends(map) {
-      var layers = this.getLayers(map.getLayers().getArray()).reverse();
+      var layers = _toConsumableArray(this.getLayers(map.getLayers().getArray())).reverse();
+
       var legendsPromises = [];
 
       for (var index = 0; index < layers.length; index++) {
@@ -95930,6 +95943,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _api_utils__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ../api/utils */ "./src/api/utils.js");
 /* harmony import */ var ol_loadingstrategy__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ol/loadingstrategy */ "./node_modules/ol/loadingstrategy.js");
 /* harmony import */ var ol_proj__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ol/proj */ "./node_modules/ol/proj.js");
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -96206,7 +96227,9 @@ function () {
     key: "loadLayers",
     value: function loadLayers() {
       var callback = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : function () {};
-      var layerConfig = this.config.layers;
+
+      var layerConfig = _toConsumableArray(this.config.layers).reverse();
+
       var remove = [];
       var map = this.map;
       map.getLayers().forEach(function (lyr) {

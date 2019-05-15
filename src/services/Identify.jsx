@@ -8,7 +8,7 @@ class FeatureIdentify {
 		const view = map.getView()
 		const mapResolution = view.getResolution()
 		const mapProjection = view.getProjection()
-		const wmsLayers = LayersHelper.getLayers(map.getLayers().getArray()).reverse()
+		const wmsLayers = [...LayersHelper.getLayers(map.getLayers().getArray())].reverse()
 		const wfsPromise = new Promise((resolve) => {
 			const layerFeatures = {}
 

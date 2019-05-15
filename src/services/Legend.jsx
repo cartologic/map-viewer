@@ -156,7 +156,7 @@ class LegendService {
 		return promiseObj
 	}
 	getLegends(map) {
-		const layers = this.getLayers(map.getLayers().getArray()).reverse()
+		const layers = [...this.getLayers(map.getLayers().getArray())].reverse()
 		let legendsPromises = []
 		for (let index = 0; index < layers.length; index++) {
 			const lyr = layers[index]

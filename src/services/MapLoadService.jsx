@@ -234,7 +234,7 @@ class MapConfigService {
 
 	}
 	loadLayers(callback = () => { }) {
-		var layerConfig = this.config.layers
+		var layerConfig = [...this.config.layers].reverse()
 		var remove = []
 		let map = this.map
 		map.getLayers().forEach((lyr) => {
