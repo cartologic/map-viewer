@@ -99,6 +99,7 @@ class MapConfigService {
 		switch (layerType) {
 			case 'arcgis_msl':
 			case 'wms':
+			case 'geonode':
 				t = 'Tile'
 				break
 			case 'wfs':
@@ -116,6 +117,7 @@ class MapConfigService {
 		let t = 'Tile'
 		switch (layerType) {
 			case 'wms':
+			case 'geonode':
 				t = 'TileWMS'
 				break
 			case 'wfs':
@@ -134,7 +136,7 @@ class MapConfigService {
 	getSource(layerJson) {
 		let s = undefined
 		const serverInfo = layerJson.server_info
-		const serverURL = serverInfo.url
+		const layerURL = layerJson.url
 		const layerName = layerJson.name
 		const layerProjection = layerJson.projection
 		const serverProxy = serverInfo.proxy
@@ -147,7 +149,7 @@ class MapConfigService {
 		if (sourceClass === TileWMS) {
 			let params = {
 				params: { TILED: 'TRUE', serverType, 'LAYERS': [layerName,] },
-				url: `${serverURL}`,
+				url: `${layerURL}`,
 				crossOrigin: 'anonymous',
 				tileLoadFunction: (tile, src) => {
 					const url = proxyable || isLocalhost ? `${serverProxy}${encodeURIComponent(src)}` : src
@@ -160,7 +162,7 @@ class MapConfigService {
 				format: new formatMapping[layer_type](),
 				loader: (extent, resolution, projection) => {
 					var proj = projection.getCode()
-					var uri = notWFS ? serverURL : `${serverURL}?service=wfs&version=2.0.0&request=GetFeature&typeNames=${layerName}&srsName=${proj}&bbox=${extent.join(',')}&outputFormat=application/json`
+					var uri = notWFS ? layerURL : `${layerURL}?service=wfs&version=2.0.0&request=GetFeature&typeNames=${layerName}&srsName=${proj}&bbox=${extent.join(',')}&outputFormat=application/json`
 					var url = proxyable || isLocalhost ? `${serverProxy}${encodeURIComponent(uri)}` : uri
 					var onError = () => {
 						source.removeLoadedExtent(extent)
@@ -186,7 +188,7 @@ class MapConfigService {
 			s = source
 		} else if (sourceClass === TileArcGISRest) {
 			let source = new sourceClass({
-				url: serverURL,
+				url: layerURL,
 				crossOrigin: 'anonymous',
 				tileLoadFunction: (tile, src) => {
 					const url = proxyable || isLocalhost ? `${serverProxy}${encodeURIComponent(src)}` : src
@@ -206,6 +208,7 @@ class MapConfigService {
 			'identifier': layerJson.id,
 			'title': layerJson.title,
 			'server_url': serverInfo.url,
+			'layer_url': layerJson.url,
 			'server_proxy': serverInfo.proxy,
 			"server_operations": serverInfo.operations,
 			'layer_type': layer_type,

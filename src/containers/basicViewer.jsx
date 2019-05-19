@@ -45,6 +45,7 @@ class BasicViewer extends React.Component {
                 featured_image: null
             },
         }
+        window.map = this.state.map
     }
     setStateKey = (key, value, callback = () => { }) => {
         this.setState({ [key]: value }, () => { callback() })
