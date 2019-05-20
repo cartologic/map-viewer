@@ -261,38 +261,6 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/@material-ui/icons/BarChart.js":
-/*!*****************************************************!*\
-  !*** ./node_modules/@material-ui/icons/BarChart.js ***!
-  \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
-
-var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@material-ui/icons/utils/createSvgIcon.js"));
-
-var _default = (0, _createSvgIcon.default)(_react.default.createElement(_react.default.Fragment, null, _react.default.createElement("path", {
-  d: "M5 9.2h3V19H5zM10.6 5h2.8v14h-2.8zm5.6 8H19v6h-2.8z"
-}), _react.default.createElement("path", {
-  fill: "none",
-  d: "M0 0h24v24H0z"
-})), 'BarChart');
-
-exports.default = _default;
-
-/***/ }),
-
 /***/ "./node_modules/@material-ui/icons/CheckCircle.js":
 /*!********************************************************!*\
   !*** ./node_modules/@material-ui/icons/CheckCircle.js ***!
@@ -640,70 +608,6 @@ var _default = (0, _createSvgIcon.default)(_react.default.createElement(_react.d
 }), _react.default.createElement("path", {
   d: "M11.99 18.54l-7.37-5.73L3 14.07l9 7 9-7-1.63-1.27-7.38 5.74zM12 16l7.36-5.73L21 9l-9-7-9 7 1.63 1.27L12 16z"
 })), 'Layers');
-
-exports.default = _default;
-
-/***/ }),
-
-/***/ "./node_modules/@material-ui/icons/Map.js":
-/*!************************************************!*\
-  !*** ./node_modules/@material-ui/icons/Map.js ***!
-  \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
-
-var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@material-ui/icons/utils/createSvgIcon.js"));
-
-var _default = (0, _createSvgIcon.default)(_react.default.createElement(_react.default.Fragment, null, _react.default.createElement("path", {
-  d: "M20.5 3l-.16.03L15 5.1 9 3 3.36 4.9c-.21.07-.36.25-.36.48V20.5c0 .28.22.5.5.5l.16-.03L9 18.9l6 2.1 5.64-1.9c.21-.07.36-.25.36-.48V3.5c0-.28-.22-.5-.5-.5zM15 19l-6-2.11V5l6 2.11V19z"
-}), _react.default.createElement("path", {
-  fill: "none",
-  d: "M0 0h24v24H0z"
-})), 'Map');
-
-exports.default = _default;
-
-/***/ }),
-
-/***/ "./node_modules/@material-ui/icons/MapRounded.js":
-/*!*******************************************************!*\
-  !*** ./node_modules/@material-ui/icons/MapRounded.js ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
-
-var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@material-ui/icons/utils/createSvgIcon.js"));
-
-var _default = (0, _createSvgIcon.default)(_react.default.createElement(_react.default.Fragment, null, _react.default.createElement("path", {
-  fill: "none",
-  d: "M0 0h24v24H0V0z"
-}), _react.default.createElement("path", {
-  d: "M14.65 4.98l-5-1.75c-.42-.15-.88-.15-1.3-.01L4.36 4.56C3.55 4.84 3 5.6 3 6.46v11.85c0 1.41 1.41 2.37 2.72 1.86l2.93-1.14c.22-.09.47-.09.69-.01l5 1.75c.42.15.88.15 1.3.01l3.99-1.34c.81-.27 1.36-1.04 1.36-1.9V5.69c0-1.41-1.41-2.37-2.72-1.86l-2.93 1.14c-.22.08-.46.09-.69.01zM15 18.89l-6-2.11V5.11l6 2.11v11.67z"
-})), 'MapRounded');
 
 exports.default = _default;
 
@@ -93311,49 +93215,36 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_icons_Add__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/icons/Add */ "./node_modules/@material-ui/icons/Add.js");
 /* harmony import */ var _material_ui_icons_Add__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Add__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _AddLayers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./AddLayers */ "./src/components/AddLayers.jsx");
-/* harmony import */ var _material_ui_icons_BarChart__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/icons/BarChart */ "./node_modules/@material-ui/icons/BarChart.js");
-/* harmony import */ var _material_ui_icons_BarChart__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_BarChart__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _context__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../context */ "./src/context/index.js");
 /* harmony import */ var _LayerSwitcher__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./LayerSwitcher */ "./src/components/LayerSwitcher.jsx");
 /* harmony import */ var _Legend__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Legend */ "./src/components/Legend.jsx");
 /* harmony import */ var _CollapsibleItem__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./CollapsibleItem */ "./src/components/CollapsibleItem.jsx");
-/* harmony import */ var _material_ui_core_FormControlLabel__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core/FormControlLabel */ "./node_modules/@material-ui/core/FormControlLabel/index.js");
-/* harmony import */ var _material_ui_core_FormControlLabel__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_FormControlLabel__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _material_ui_icons_Image__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/icons/Image */ "./node_modules/@material-ui/icons/Image.js");
-/* harmony import */ var _material_ui_icons_Image__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Image__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _material_ui_icons_Layers__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/icons/Layers */ "./node_modules/@material-ui/icons/Layers.js");
-/* harmony import */ var _material_ui_icons_Layers__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Layers__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _material_ui_core_List__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core/List */ "./node_modules/@material-ui/core/List/index.js");
-/* harmony import */ var _material_ui_core_List__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_List__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @material-ui/core/ListItem */ "./node_modules/@material-ui/core/ListItem/index.js");
-/* harmony import */ var _material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var _material_ui_core_ListItemIcon__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @material-ui/core/ListItemIcon */ "./node_modules/@material-ui/core/ListItemIcon/index.js");
-/* harmony import */ var _material_ui_core_ListItemIcon__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_ListItemIcon__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @material-ui/core/ListItemText */ "./node_modules/@material-ui/core/ListItemText/index.js");
-/* harmony import */ var _material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_13__);
-/* harmony import */ var _material_ui_icons_Map__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @material-ui/icons/Map */ "./node_modules/@material-ui/icons/Map.js");
-/* harmony import */ var _material_ui_icons_Map__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Map__WEBPACK_IMPORTED_MODULE_14__);
-/* harmony import */ var _material_ui_icons_MapRounded__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @material-ui/icons/MapRounded */ "./node_modules/@material-ui/icons/MapRounded.js");
-/* harmony import */ var _material_ui_icons_MapRounded__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_MapRounded__WEBPACK_IMPORTED_MODULE_15__);
-/* harmony import */ var _Navbar_jsx__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./Navbar.jsx */ "./src/components/Navbar.jsx");
-/* harmony import */ var _material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @material-ui/core/Paper */ "./node_modules/@material-ui/core/Paper/index.js");
-/* harmony import */ var _material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_17__);
-/* harmony import */ var _material_ui_icons_Print__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @material-ui/icons/Print */ "./node_modules/@material-ui/icons/Print.js");
-/* harmony import */ var _material_ui_icons_Print__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Print__WEBPACK_IMPORTED_MODULE_18__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_19__);
-/* harmony import */ var _material_ui_core_Radio__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @material-ui/core/Radio */ "./node_modules/@material-ui/core/Radio/index.js");
-/* harmony import */ var _material_ui_core_Radio__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Radio__WEBPACK_IMPORTED_MODULE_20__);
-/* harmony import */ var _material_ui_core_RadioGroup__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @material-ui/core/RadioGroup */ "./node_modules/@material-ui/core/RadioGroup/index.js");
-/* harmony import */ var _material_ui_core_RadioGroup__WEBPACK_IMPORTED_MODULE_21___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_RadioGroup__WEBPACK_IMPORTED_MODULE_21__);
-/* harmony import */ var _SaveDialog__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./SaveDialog */ "./src/components/SaveDialog.jsx");
-/* harmony import */ var _material_ui_icons_Save__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @material-ui/icons/Save */ "./node_modules/@material-ui/icons/Save.js");
-/* harmony import */ var _material_ui_icons_Save__WEBPACK_IMPORTED_MODULE_23___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Save__WEBPACK_IMPORTED_MODULE_23__);
-/* harmony import */ var _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @material-ui/core/TextField */ "./node_modules/@material-ui/core/TextField/index.js");
-/* harmony import */ var _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_24___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_24__);
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_25___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_25__);
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/styles/index.js");
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_26___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_26__);
+/* harmony import */ var _material_ui_icons_Image__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/icons/Image */ "./node_modules/@material-ui/icons/Image.js");
+/* harmony import */ var _material_ui_icons_Image__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Image__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _material_ui_icons_Layers__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/icons/Layers */ "./node_modules/@material-ui/icons/Layers.js");
+/* harmony import */ var _material_ui_icons_Layers__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Layers__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _material_ui_core_List__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/List */ "./node_modules/@material-ui/core/List/index.js");
+/* harmony import */ var _material_ui_core_List__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_List__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core/ListItem */ "./node_modules/@material-ui/core/ListItem/index.js");
+/* harmony import */ var _material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _material_ui_core_ListItemIcon__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @material-ui/core/ListItemIcon */ "./node_modules/@material-ui/core/ListItemIcon/index.js");
+/* harmony import */ var _material_ui_core_ListItemIcon__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_ListItemIcon__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @material-ui/core/ListItemText */ "./node_modules/@material-ui/core/ListItemText/index.js");
+/* harmony import */ var _material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _Navbar_jsx__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./Navbar.jsx */ "./src/components/Navbar.jsx");
+/* harmony import */ var _material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @material-ui/core/Paper */ "./node_modules/@material-ui/core/Paper/index.js");
+/* harmony import */ var _material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var _material_ui_icons_Print__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @material-ui/icons/Print */ "./node_modules/@material-ui/icons/Print.js");
+/* harmony import */ var _material_ui_icons_Print__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Print__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_16__);
+/* harmony import */ var _SaveDialog__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./SaveDialog */ "./src/components/SaveDialog.jsx");
+/* harmony import */ var _material_ui_icons_Save__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @material-ui/icons/Save */ "./node_modules/@material-ui/icons/Save.js");
+/* harmony import */ var _material_ui_icons_Save__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Save__WEBPACK_IMPORTED_MODULE_18__);
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_19__);
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/styles/index.js");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_20__);
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -93361,12 +93252,6 @@ function _nonIterableRest() { throw new TypeError("Invalid attempt to destructur
 function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-
-
-
-
-
 
 
 
@@ -93413,6 +93298,7 @@ var styles = function styles(theme) {
 var CartoviewDrawer = function CartoviewDrawer(props) {
   var classes = props.classes,
       className = props.className;
+  var context = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context__WEBPACK_IMPORTED_MODULE_3__["BasicViewerContext"]);
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
       _useState2 = _slicedToArray(_useState, 2),
@@ -93424,39 +93310,46 @@ var CartoviewDrawer = function CartoviewDrawer(props) {
       saveMapOpen = _useState4[0],
       setSaveMapOpen = _useState4[1];
 
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_17___default.a, {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_14___default.a, {
     elevation: 6,
-    className: classnames__WEBPACK_IMPORTED_MODULE_25___default()(classes.root, className)
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navbar_jsx__WEBPACK_IMPORTED_MODULE_16__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_17___default.a, {
+    className: classnames__WEBPACK_IMPORTED_MODULE_19___default()(classes.root, className)
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navbar_jsx__WEBPACK_IMPORTED_MODULE_13__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_14___default.a, {
     className: classes.drawerPaper,
     elevation: 0
-  }, !component && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_List__WEBPACK_IMPORTED_MODULE_10___default.a, {
+  }, !component && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_List__WEBPACK_IMPORTED_MODULE_9___default.a, {
     disablePadding: true
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_11___default.a, {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_10___default.a, {
     button: true,
     onClick: function onClick() {
       return setSaveMapOpen(true);
     }
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_ListItemIcon__WEBPACK_IMPORTED_MODULE_12___default.a, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_Save__WEBPACK_IMPORTED_MODULE_23___default.a, null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_13___default.a, {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_ListItemIcon__WEBPACK_IMPORTED_MODULE_11___default.a, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_Save__WEBPACK_IMPORTED_MODULE_18___default.a, null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_12___default.a, {
     primary: "Save Map"
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_11___default.a, {
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_10___default.a, {
     onClick: function onClick() {
       return setComponent('AddLayers');
     },
     button: true
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_ListItemIcon__WEBPACK_IMPORTED_MODULE_12___default.a, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_Add__WEBPACK_IMPORTED_MODULE_1___default.a, null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_13___default.a, {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_ListItemIcon__WEBPACK_IMPORTED_MODULE_11___default.a, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_Add__WEBPACK_IMPORTED_MODULE_1___default.a, null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_12___default.a, {
     primary: "Add Layers"
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_CollapsibleItem__WEBPACK_IMPORTED_MODULE_6__["default"], {
     open: false,
     title: "Layers",
-    icon: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_Layers__WEBPACK_IMPORTED_MODULE_9___default.a, null)
+    icon: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_Layers__WEBPACK_IMPORTED_MODULE_8___default.a, null)
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_LayerSwitcher__WEBPACK_IMPORTED_MODULE_4__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_CollapsibleItem__WEBPACK_IMPORTED_MODULE_6__["default"], {
     open: false,
     title: "Legend",
-    icon: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_Image__WEBPACK_IMPORTED_MODULE_8___default.a, null)
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Legend__WEBPACK_IMPORTED_MODULE_5__["default"], null))), component == "AddLayers" && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AddLayers__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    icon: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_Image__WEBPACK_IMPORTED_MODULE_7___default.a, null)
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Legend__WEBPACK_IMPORTED_MODULE_5__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_10___default.a, {
+    button: true,
+    onClick: function onClick() {
+      return context.exportMap();
+    }
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_ListItemIcon__WEBPACK_IMPORTED_MODULE_11___default.a, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_Print__WEBPACK_IMPORTED_MODULE_15___default.a, null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_12___default.a, {
+    primary: "Export Map"
+  }))), component == "AddLayers" && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AddLayers__WEBPACK_IMPORTED_MODULE_2__["default"], {
     setComponent: setComponent
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SaveDialog__WEBPACK_IMPORTED_MODULE_22__["default"], {
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SaveDialog__WEBPACK_IMPORTED_MODULE_17__["default"], {
     open: saveMapOpen,
     handleClose: function handleClose() {
       return setSaveMapOpen(false);
@@ -93465,10 +93358,10 @@ var CartoviewDrawer = function CartoviewDrawer(props) {
 };
 
 CartoviewDrawer.propTypes = {
-  classes: prop_types__WEBPACK_IMPORTED_MODULE_19___default.a.object.isRequired,
-  className: prop_types__WEBPACK_IMPORTED_MODULE_19___default.a.string.isRequired
+  classes: prop_types__WEBPACK_IMPORTED_MODULE_16___default.a.object.isRequired,
+  className: prop_types__WEBPACK_IMPORTED_MODULE_16___default.a.string.isRequired
 };
-/* harmony default export */ __webpack_exports__["default"] = (Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_26__["withStyles"])(styles)(CartoviewDrawer));
+/* harmony default export */ __webpack_exports__["default"] = (Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_20__["withStyles"])(styles)(CartoviewDrawer));
 
 /***/ }),
 
@@ -94975,17 +94868,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_Identify__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../services/Identify */ "./src/services/Identify.jsx");
 /* harmony import */ var cartoview_sdk_helpers_FeaturesHelper__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! cartoview-sdk/helpers/FeaturesHelper */ "./node_modules/cartoview-sdk/helpers/FeaturesHelper.js");
 /* harmony import */ var cartoview_sdk_helpers_FeaturesHelper__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(cartoview_sdk_helpers_FeaturesHelper__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _services_Legend__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../services/Legend */ "./src/services/Legend.jsx");
-/* harmony import */ var _services_MapLoadService__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../services/MapLoadService */ "./src/services/MapLoadService.jsx");
-/* harmony import */ var mustache__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! mustache */ "./node_modules/mustache/mustache.js");
-/* harmony import */ var mustache__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(mustache__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var ol_overlay__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ol/overlay */ "./node_modules/ol/overlay.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_14__);
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_15__);
-/* harmony import */ var ol_proj__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ol/proj */ "./node_modules/ol/proj.js");
-/* harmony import */ var proj4__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! proj4 */ "./node_modules/proj4/lib/index.js");
+/* harmony import */ var file_saver__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! file-saver */ "./node_modules/file-saver/dist/FileSaver.min.js");
+/* harmony import */ var file_saver__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(file_saver__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _services_Legend__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../services/Legend */ "./src/services/Legend.jsx");
+/* harmony import */ var _services_MapLoadService__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../services/MapLoadService */ "./src/services/MapLoadService.jsx");
+/* harmony import */ var mustache__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! mustache */ "./node_modules/mustache/mustache.js");
+/* harmony import */ var mustache__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(mustache__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var ol_overlay__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ol/overlay */ "./node_modules/ol/overlay.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_16__);
+/* harmony import */ var ol_proj__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ol/proj */ "./node_modules/ol/proj.js");
+/* harmony import */ var proj4__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! proj4 */ "./node_modules/proj4/lib/index.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
@@ -95034,7 +94929,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-ol_proj__WEBPACK_IMPORTED_MODULE_16__["default"].setProj4(proj4__WEBPACK_IMPORTED_MODULE_17__["default"]);
+
+ol_proj__WEBPACK_IMPORTED_MODULE_17__["default"].setProj4(proj4__WEBPACK_IMPORTED_MODULE_18__["default"]);
 
 var BasicViewer =
 /*#__PURE__*/
@@ -95062,7 +94958,7 @@ function (_React$Component) {
 
       if (currentMap.popup_template && feature) {
         var data = feature.getProperties();
-        template = mustache__WEBPACK_IMPORTED_MODULE_12___default.a.render(template, data);
+        template = mustache__WEBPACK_IMPORTED_MODULE_13___default.a.render(template, data);
       }
 
       return template;
@@ -95092,6 +94988,23 @@ function (_React$Component) {
       _this.setState({
         activeFeature: previuosIndex
       });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "exportMap", function () {
+      var map = _this.state.map;
+      console.log("ssss");
+      map.once('postcompose', function (event) {
+        var canvas = event.context.canvas;
+
+        if (navigator.msSaveBlob) {
+          navigator.msSaveBlob(canvas.msToBlob(), 'map.png');
+        } else {
+          canvas.toBlob(function (blob) {
+            file_saver__WEBPACK_IMPORTED_MODULE_10___default.a.saveAs(blob, 'map.png');
+          });
+        }
+      });
+      map.renderSync();
     });
 
     _defineProperty(_assertThisInitialized(_this), "getMapThumbnail", function () {
@@ -95237,7 +95150,7 @@ function (_React$Component) {
 
     _defineProperty(_assertThisInitialized(_this), "loadMap", function (mapJson) {
       var map = _this.state.map;
-      var service = new _services_MapLoadService__WEBPACK_IMPORTED_MODULE_11__["default"](map, mapJson);
+      var service = new _services_MapLoadService__WEBPACK_IMPORTED_MODULE_12__["default"](map, mapJson);
       service.load(function () {
         var layers = map.getLayers().getArray();
         layers = _toConsumableArray(layers).reverse().filter(function (layer) {
@@ -95254,7 +95167,7 @@ function (_React$Component) {
           mapLayers: layers
         });
 
-        Promise.all(_services_Legend__WEBPACK_IMPORTED_MODULE_10__["default"].getLegends(map)).then(function (result) {
+        Promise.all(_services_Legend__WEBPACK_IMPORTED_MODULE_11__["default"].getLegends(map)).then(function (result) {
           return _this.setState({
             legends: result
           });
@@ -95299,7 +95212,8 @@ function (_React$Component) {
         setStateKey: _this.setStateKey,
         zoomToExtent: _this.zoomToExtent,
         saveMap: _this.saveMap,
-        popupTemplateing: _this.popupTemplateing
+        popupTemplateing: _this.popupTemplateing,
+        exportMap: _this.exportMap
       });
     });
 
@@ -95379,7 +95293,7 @@ function (_React$Component) {
         });
       }
 
-      this.overlay = new ol_overlay__WEBPACK_IMPORTED_MODULE_13__["default"]({
+      this.overlay = new ol_overlay__WEBPACK_IMPORTED_MODULE_14__["default"]({
         autoPan: true,
         autoPanAnimation: {
           duration: 250
@@ -95406,14 +95320,14 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(_context__WEBPACK_IMPORTED_MODULE_6__["BasicViewerProvider"], {
+      return react__WEBPACK_IMPORTED_MODULE_15___default.a.createElement(_context__WEBPACK_IMPORTED_MODULE_6__["BasicViewerProvider"], {
         value: this.getContextValue()
-      }, react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(_components_ContentGrid__WEBPACK_IMPORTED_MODULE_7__["default"], null));
+      }, react__WEBPACK_IMPORTED_MODULE_15___default.a.createElement(_components_ContentGrid__WEBPACK_IMPORTED_MODULE_7__["default"], null));
     }
   }]);
 
   return BasicViewer;
-}(react__WEBPACK_IMPORTED_MODULE_14___default.a.Component);
+}(react__WEBPACK_IMPORTED_MODULE_15___default.a.Component);
 
 var elem = document.getElementById("basicviewer-app");
 
@@ -95424,7 +95338,7 @@ if (!elem) {
   document.body.prepend(elem);
 }
 
-react_dom__WEBPACK_IMPORTED_MODULE_15___default.a.render(react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(BasicViewer, null), elem);
+react_dom__WEBPACK_IMPORTED_MODULE_16___default.a.render(react__WEBPACK_IMPORTED_MODULE_15___default.a.createElement(BasicViewer, null), elem);
 
 if (false) {}
 

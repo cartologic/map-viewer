@@ -1,29 +1,23 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 
 import AddIcon from '@material-ui/icons/Add'
 import AddLayers from './AddLayers'
-import BarChartIcon from '@material-ui/icons/BarChart'
+import { BasicViewerContext } from '../context'
 import CartoviewLayerSwitcher from './LayerSwitcher'
 import CartoviewLegends from './Legend'
 import CollapsibleListItem from './CollapsibleItem'
-import FormControlLabel from '@material-ui/core/FormControlLabel';
 import ImageIcon from '@material-ui/icons/Image'
 import LayersIcons from '@material-ui/icons/Layers'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
-import MapIcon from '@material-ui/icons/Map'
-import MapRoundedIcon from '@material-ui/icons/MapRounded'
 import NavBar from './Navbar.jsx'
 import Paper from '@material-ui/core/Paper'
 import PrintIcon from '@material-ui/icons/Print'
 import PropTypes from 'prop-types'
-import Radio from '@material-ui/core/Radio';
-import RadioGroup from '@material-ui/core/RadioGroup';
 import SaveDialog from './SaveDialog'
 import SaveIcon from '@material-ui/icons/Save'
-import TextField from '@material-ui/core/TextField';
 import classnames from 'classnames'
 import { withStyles } from '@material-ui/core/styles'
 
@@ -49,6 +43,8 @@ const CartoviewDrawer = (props) => {
 	const {
 		classes, className
 	} = props
+	let context = useContext(BasicViewerContext)
+
 	const [component, setComponent] = useState(null)
 	const [saveMapOpen, setSaveMapOpen] = useState(false)
 	return (
@@ -74,12 +70,12 @@ const CartoviewDrawer = (props) => {
 					<CollapsibleListItem open={false} title="Legend" icon={<ImageIcon />}>
 						<CartoviewLegends />
 					</CollapsibleListItem>
-					{/* <ListItem button onClick={() => { }}>
+					<ListItem button onClick={() => context.exportMap()}>
 						<ListItemIcon>
 							<PrintIcon />
 						</ListItemIcon>
-						<ListItemText primary="Print" />
-					</ListItem> */}
+						<ListItemText primary="Export Map" />
+					</ListItem>
 				</List>}
 				{component == "AddLayers" && <AddLayers setComponent={setComponent} />}
 			</Paper>
@@ -87,7 +83,6 @@ const CartoviewDrawer = (props) => {
 		</Paper>
 	)
 }
-
 CartoviewDrawer.propTypes = {
 	classes: PropTypes.object.isRequired,
 	className: PropTypes.string.isRequired,

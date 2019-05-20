@@ -10,6 +10,7 @@ import { BasicViewerProvider } from '../context'
 import ContentGrid from '../components/ContentGrid'
 import FeatureIdentify from '../services/Identify'
 import FeaturesHelper from 'cartoview-sdk/helpers/FeaturesHelper'
+import FileSaver from 'file-saver'
 import LegendService from '../services/Legend'
 import MapConfigService from '../services/MapLoadService'
 import Mustache from 'mustache'
@@ -73,6 +74,22 @@ class BasicViewer extends React.Component {
         const previuosIndex = activeFeature - 1
         this.setState({ activeFeature: previuosIndex })
     }
+    exportMap = () => {
+        const { map } = this.state
+        console.log("ssss");
+
+        map.once('postcompose', (event) => {
+            let canvas = event.context.canvas
+            if (navigator.msSaveBlob) {
+                navigator.msSaveBlob(canvas.msToBlob(), 'map.png')
+            } else {
+                canvas.toBlob((blob) => {
+                    FileSaver.saveAs(blob, 'map.png')
+                })
+            }
+        })
+        map.renderSync()
+    }
     getMapThumbnail = () => {
         let imagePromise = new Promise((resolve, reject) => {
             const { map } = this.state
@@ -83,7 +100,7 @@ class BasicViewer extends React.Component {
                     resolve(file)
                 })
             });
-            map.renderSync();
+            map.renderSync()
         })
         return imagePromise
     }
@@ -247,7 +264,8 @@ class BasicViewer extends React.Component {
             setStateKey: this.setStateKey,
             zoomToExtent: this.zoomToExtent,
             saveMap: this.saveMap,
-            popupTemplateing: this.popupTemplateing
+            popupTemplateing: this.popupTemplateing,
+            exportMap: this.exportMap
         }
     }
     identify = (evt) => {
