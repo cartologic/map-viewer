@@ -76,8 +76,6 @@ class BasicViewer extends React.Component {
     }
     exportMap = () => {
         const { map } = this.state
-        console.log("ssss");
-
         map.once('postcompose', (event) => {
             let canvas = event.context.canvas
             if (navigator.msSaveBlob) {
