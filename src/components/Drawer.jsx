@@ -58,18 +58,22 @@ const CartoviewDrawer = (props) => {
 						</ListItemIcon>
 						<ListItemText primary="Save Map" />
 					</ListItem>
+
 					<ListItem onClick={() => setComponent('AddLayers')} button>
 						<ListItemIcon>
 							<AddIcon />
 						</ListItemIcon>
 						<ListItemText primary="Add Layers" />
 					</ListItem>
+
 					<CollapsibleListItem open={false} title="Layers" icon={<LayersIcons />}>
 						<CartoviewLayerSwitcher />
 					</CollapsibleListItem>
+
 					<CollapsibleListItem open={false} title="Legend" icon={<ImageIcon />}>
 						<CartoviewLegends />
 					</CollapsibleListItem>
+					
 					<ListItem button onClick={() => context.exportMap()}>
 						<ListItemIcon>
 							<PrintIcon />

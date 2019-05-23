@@ -6,13 +6,14 @@ import PropTypes from "prop-types"
 import React from "react"
 import SearchIcon from "@material-ui/icons/Search"
 import { withStyles } from "@material-ui/core/styles"
+import Menu from "./Menu";
 
 const styles = theme => ({
   root: {
     padding: "2px 4px",
     display: "flex",
     alignItems: "center",
-	width: '100%',
+    width: '100%',
   },
   input: {
     marginLeft: 8,
@@ -33,6 +34,7 @@ function SearchInput(props) {
 
   return (
     <Paper className={classes.root} elevation={1}>
+      <Menu />
       <IconButton
         onClick={menuClickHandle}
         className={classes.iconButton}

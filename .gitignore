@@ -11,6 +11,8 @@ __pycache__/
 build/
 develop-eggs/
 dist/
+dist
+dist/*
 downloads/
 eggs/
 .eggs/
@@ -125,3 +127,4 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 yarn.lock
+package-lock\.json
