@@ -1,17 +1,19 @@
 import React, { useState, useContext } from 'react';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import MenuIcon from "@material-ui/icons/Menu";
 import PrintIcon from "@material-ui/icons/Print";
 import SaveIcon from "@material-ui/icons/Save";
-import AddIcon from '@material-ui/icons/Add'
-import MenuItem from '@material-ui/core/MenuItem';
+import AddIcon from '@material-ui/icons/Add';
+import LayersIcon from '@material-ui/icons/Layers';
 
 import { BasicViewerContext } from '../context';
 import SaveDialog from './SaveDialog';
-import AddLayers from './AddLayersDialog';
+import AddLayersDialog from './AddLayersDialog';
+import LayersDrawer from './LayersDrawer';
 
 
 function SimpleMenu() {
@@ -19,13 +21,13 @@ function SimpleMenu() {
     const [anchorEl, setAnchorEl] = useState(null);
     const [saveMapOpen, setSaveMapOpen] = useState(false)
     const [addLayersOpen, setAddLayersOpen] = useState(false)
-    const [component, setComponent] = useState(null)
+    const [layersDrawerOpen, setLayersDrawerOpen] = useState(false)
 
     function handleClick(event) {
         setAnchorEl(event.currentTarget);
     }
 
-    function handleClose() {
+    function handleMenuClose() {
         setAnchorEl(null);
     }
 
@@ -40,7 +42,7 @@ function SimpleMenu() {
             <Menu id="simple-menu"
                 anchorEl={anchorEl}
                 open={Boolean(anchorEl)}
-                onClose={handleClose}
+                onClose={handleMenuClose}
                 getContentAnchorEl={null}
                 anchorOrigin={{
                     vertical: 'bottom',
@@ -48,21 +50,28 @@ function SimpleMenu() {
                 }}
                 style={{ top: "7px", left: "-7px" }}>
 
-                <MenuItem onClick={() => setSaveMapOpen(true)} >
+                <MenuItem onClick={() => { setSaveMapOpen(true); handleMenuClose() }}>
                     <ListItemIcon>
                         <SaveIcon />
                     </ListItemIcon>
                     <ListItemText primary="Save Map" />
                 </MenuItem>
 
-                <MenuItem onClick={() => setAddLayersOpen(true)}>
+                <MenuItem onClick={() => { setAddLayersOpen(true); handleMenuClose() }}>
                     <ListItemIcon>
                         <AddIcon />
                     </ListItemIcon>
                     <ListItemText primary="Add Layers" />
                 </MenuItem>
 
-                <MenuItem onClick={() => context.exportMap()}>
+                <MenuItem onClick={() => { setLayersDrawerOpen(true); handleMenuClose() }}>
+                    <ListItemIcon>
+                        <LayersIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Layers" />
+                </MenuItem>
+
+                <MenuItem onClick={() => { context.exportMap(); handleMenuClose() }}>
                     <ListItemIcon>
                         <PrintIcon />
                     </ListItemIcon>
@@ -71,9 +80,9 @@ function SimpleMenu() {
 
             </Menu>
             <SaveDialog open={saveMapOpen} handleClose={() => setSaveMapOpen(false)} />
-            <AddLayers open={addLayersOpen} handleClose={() => setAddLayersOpen(false)} />
-
-        </div>
+            <AddLayersDialog open={addLayersOpen} handleClose={() => setAddLayersOpen(false)} />
+            <LayersDrawer open={layersDrawerOpen} handleClose={() => setLayersDrawerOpen(false)} />
+        </div >
     );
 }
 

@@ -3,12 +3,10 @@ import React from 'react'
 import { fetchServerLayers, fetchServers } from '../api'
 
 import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions'
 import DialogContent from '@material-ui/core/DialogContent'
 import DialogTitle from '@material-ui/core/DialogTitle'
 
 import AddIcon from '@material-ui/icons/Add'
-import ArrowBackSharpIcon from '@material-ui/icons/ArrowBackSharp'
 import { BasicViewerContext } from '../context'
 import DeleteIcon from '@material-ui/icons/Delete'
 import FormControl from '@material-ui/core/FormControl'
@@ -27,6 +25,9 @@ import Select from '@material-ui/core/Select'
 import { withStyles } from '@material-ui/core/styles'
 
 const styles = theme => ({
+	dialogBox: {
+		width: '400px'
+	},
 	divFlex: {
 		display: 'flex',
 		margin: '0px 10px'
@@ -53,7 +54,7 @@ class AddLayers extends React.PureComponent {
 			selectedServerId: -1,
 			offset: 0,
 			count: 0,
-			limit: 25
+			limit: 15
 		}
 	}
 	handleOffsetChange = (offset) => {
@@ -136,9 +137,10 @@ class AddLayers extends React.PureComponent {
 			<div>
 				<Dialog
 					open={open}
-					onClose={handleClose}>
+					onClose={handleClose}
+				>
 					<DialogTitle id="form-dialog-title">{"Add Layers"}</DialogTitle>
-					<DialogContent>
+					<DialogContent className={classes.dialogBox}>
 						<div className={classes.controlFlex}>
 							<FormControl className={classes.divFlex}>
 								<InputLabel htmlFor="server-select">Server</InputLabel>
@@ -151,7 +153,7 @@ class AddLayers extends React.PureComponent {
 									}}
 								>
 									<MenuItem value={-1}>
-										<em>{"------"}</em>
+										<em>{"Choose Server..."}</em>
 									</MenuItem>
 									{servers.length > 0 && servers.map(server => {
 										return <MenuItem key={server.id} value={server.id}>{server.title}</MenuItem>
@@ -187,7 +189,6 @@ class AddLayers extends React.PureComponent {
 }
 AddLayers.propTypes = {
 	classes: PropTypes.object.isRequired,
-	setComponent: PropTypes.func.isRequired,
 }
 AddLayers.contextType = BasicViewerContext
 export default withStyles(styles)(AddLayers)
