@@ -9,11 +9,13 @@ import PrintIcon from "@material-ui/icons/Print";
 import SaveIcon from "@material-ui/icons/Save";
 import AddIcon from '@material-ui/icons/Add';
 import LayersIcon from '@material-ui/icons/Layers';
+import ImageIcon from '@material-ui/icons/Image'
 
 import { BasicViewerContext } from '../context';
 import SaveDialog from './SaveDialog';
 import AddLayersDialog from './AddLayersDialog';
 import LayersDrawer from './LayersDrawer';
+import LegendsDrawer from './LegendsDrawer';
 
 
 function SimpleMenu() {
@@ -22,6 +24,7 @@ function SimpleMenu() {
     const [saveMapOpen, setSaveMapOpen] = useState(false)
     const [addLayersOpen, setAddLayersOpen] = useState(false)
     const [layersDrawerOpen, setLayersDrawerOpen] = useState(false)
+    const [legendsDrawerOpen, setLegendsDrawerOpen] = useState(false)
 
     function handleClick(event) {
         setAnchorEl(event.currentTarget);
@@ -71,17 +74,24 @@ function SimpleMenu() {
                     <ListItemText primary="Layers" />
                 </MenuItem>
 
+                <MenuItem onClick={() => { setLegendsDrawerOpen(true); handleMenuClose() }}>
+                    <ListItemIcon>
+                        <ImageIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Legends" />
+                </MenuItem>
+
                 <MenuItem onClick={() => { context.exportMap(); handleMenuClose() }}>
                     <ListItemIcon>
                         <PrintIcon />
                     </ListItemIcon>
                     <ListItemText primary="Export Map" />
                 </MenuItem>
-
             </Menu>
             <SaveDialog open={saveMapOpen} handleClose={() => setSaveMapOpen(false)} />
             <AddLayersDialog open={addLayersOpen} handleClose={() => setAddLayersOpen(false)} />
             <LayersDrawer open={layersDrawerOpen} handleClose={() => setLayersDrawerOpen(false)} />
+            <LegendsDrawer open={legendsDrawerOpen} handleClose={() => setLegendsDrawerOpen(false)} />
         </div >
     );
 }
