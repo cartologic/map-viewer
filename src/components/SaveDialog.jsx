@@ -21,7 +21,7 @@ const styles = theme => ({
 		overflowY: 'scroll',
 	},
 	button: {
-		margin: theme.spacing.unit,
+		margin: theme.spacing()
 	}
 })
 class SaveDialog extends React.Component {

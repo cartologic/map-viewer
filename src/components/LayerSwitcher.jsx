@@ -21,7 +21,7 @@ import { withStyles } from '@material-ui/core/styles'
 const DragHandle = SortableHandle(() => <DragHandleIcon />)
 const styles = theme => ({
 	legendsPaper: {
-		padding: theme.spacing.unit * 2,
+		padding: theme.spacing(2),
 	}
 })
 const LayerItem = SortableElement(({ layer, layerIndex, handleLayerVisibilty, zoomToLayerData, handleLayerOpacity }) => {

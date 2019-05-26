@@ -1,11 +1,11 @@
+import React from "react"
 import IconButton from "@material-ui/core/IconButton"
 import InputBase from "@material-ui/core/InputBase"
-import MenuIcon from "@material-ui/icons/Menu"
 import Paper from "@material-ui/core/Paper"
 import PropTypes from "prop-types"
-import React from "react"
 import SearchIcon from "@material-ui/icons/Search"
 import { withStyles } from "@material-ui/core/styles"
+
 import Menu from "./Menu";
 
 const styles = theme => ({
@@ -30,18 +30,11 @@ const styles = theme => ({
 })
 
 function SearchInput(props) {
-  const { classes, menuClickHandle } = props
+  const { classes } = props
 
   return (
     <Paper className={classes.root} elevation={1}>
       <Menu />
-      <IconButton
-        onClick={menuClickHandle}
-        className={classes.iconButton}
-        aria-label="Menu"
-      >
-        <MenuIcon />
-      </IconButton>
       <InputBase className={classes.input} placeholder="Search For Location" />
       <IconButton className={classes.iconButton} aria-label="Search">
         <SearchIcon />
@@ -51,8 +44,7 @@ function SearchInput(props) {
 }
 
 SearchInput.propTypes = {
-  classes: PropTypes.object.isRequired,
-  menuClickHandle: PropTypes.func.isRequired
+  classes: PropTypes.object.isRequired
 }
 
 export default withStyles(styles)(SearchInput)

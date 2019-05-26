@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react';
-import Button from '@material-ui/core/Button';
+import { makeStyles } from '@material-ui/core/styles';
+import IconButton from '@material-ui/core/IconButton';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
@@ -17,8 +18,15 @@ import AddLayersDialog from './AddLayersDialog';
 import LayersDrawer from './LayersDrawer';
 import LegendsDrawer from './LegendsDrawer';
 
+const useStyles = makeStyles({
+    iconButton: {
+        marginLeft: "1em",
+    }
+});
 
 function SimpleMenu() {
+
+    const classes = useStyles();
     let context = useContext(BasicViewerContext)
     const [anchorEl, setAnchorEl] = useState(null);
     const [saveMapOpen, setSaveMapOpen] = useState(false)
@@ -36,12 +44,13 @@ function SimpleMenu() {
 
     return (
         <div>
-            <Button
+            <IconButton
                 aria-owns={anchorEl ? 'simple-menu' : undefined}
                 aria-haspopup="true"
+                className={classes.iconButton}
                 onClick={handleClick}>
                 <MenuIcon />
-            </Button>
+            </IconButton>
             <Menu id="simple-menu"
                 anchorEl={anchorEl}
                 open={Boolean(anchorEl)}
@@ -51,7 +60,7 @@ function SimpleMenu() {
                     vertical: 'bottom',
                     horizontal: 'left',
                 }}
-                style={{ top: "7px", left: "-7px" }}>
+                style={{ top: "4px", left: "-26px" }}>
 
                 <MenuItem onClick={() => { setSaveMapOpen(true); handleMenuClose() }}>
                     <ListItemIcon>

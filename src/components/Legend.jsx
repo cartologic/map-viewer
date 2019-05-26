@@ -9,7 +9,7 @@ import { withStyles } from '@material-ui/core/styles'
 
 const styles = theme => ({
 	legendsPaper: {
-		padding: theme.spacing.unit * 2,
+		padding: theme.spacing(2),
 		textAlign: "center"
 	}
 })

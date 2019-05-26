@@ -56,7 +56,7 @@ const styles = theme => ({
 	tableCell: {
 		flex: ".5",
 		alignItems: "center",
-		padding: `${theme.spacing.unit}px !important`,
+		padding: `${theme.spacing()}px !important`,
 		whiteSpace: 'nowrap',
 		overflow: 'hidden',
 		textOverflow: 'ellipsis'
@@ -204,7 +204,7 @@ class CartoviewPopup extends React.PureComponent {
 						{!popupTemplateing(currentFeature) && <FeatureAttributesTable currentFeature={currentFeature} />}
 						{popupTemplateing(currentFeature) && <div dangerouslySetInnerHTML={{ __html: popupTemplateing(currentFeature) }}></div>}
 					</div>}
-						{featureIdentifyResult.length == 0 && !featureIdentifyLoading && <Message message={"No Features at this Point"} type={"subheading"} />}
+						{featureIdentifyResult.length == 0 && !featureIdentifyLoading && <Message message={"No Features at this Point"} type={"subtitle1"} />}
 					</div>
 				</Paper>
 			</div>
