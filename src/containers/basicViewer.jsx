@@ -27,7 +27,6 @@ class BasicViewer extends React.Component {
         super(props)
         this.state = {
             map: BasicViewerHelper.getMap(),
-            drawerOpen: false,
             featureIdentifyLoading: false,
             featureIdentifyResult: [],
             showPopup: false,
@@ -102,10 +101,7 @@ class BasicViewer extends React.Component {
         })
         return imagePromise
     }
-    toggleDrawer = () => {
-        const { drawerOpen } = this.state
-        this.setState({ drawerOpen: !drawerOpen })
-    }
+  
     save = () => {
         const { currentMap, map, mapLayers } = this.state
         const view = map.getView()
@@ -254,7 +250,6 @@ class BasicViewer extends React.Component {
     getContextValue = () => {
         return {
             ...this.state,
-            toggleDrawer: this.toggleDrawer,
             nextFeature: this.nextFeature,
             previousFeature: this.previousFeature,
             changeShowPopup: this.changeShowPopup,

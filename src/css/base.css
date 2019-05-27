@@ -327,7 +327,7 @@ html {
     width: 12px !important;
     right: 1% !important;
     top: 15%;
-    left: auto;
+    left: auto !important;
     background-color: #9e9e9ec7 !important;
 }
 
