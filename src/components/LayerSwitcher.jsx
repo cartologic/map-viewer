@@ -4,7 +4,7 @@ import { SortableContainer, SortableElement, SortableHandle } from 'react-sortab
 
 import { BasicViewerContext } from '../context'
 import Checkbox from '@material-ui/core/Checkbox'
-import DragHandleIcon from '@material-ui/icons/DragHandle'
+import DragHandleIcon from '@material-ui/icons/DragIndicator'
 import DropDown from './DropDown'
 import InputRange from 'react-input-range'
 import List from '@material-ui/core/List'
@@ -18,7 +18,7 @@ import React from 'react'
 import { arrayMove } from 'react-sortable-hoc'
 import { withStyles } from '@material-ui/core/styles'
 
-const DragHandle = SortableHandle(() => <DragHandleIcon />)
+const DragHandle = SortableHandle(() => <DragHandleIcon style={{ cursor: 'move' }} />)
 const styles = theme => ({
 	legendsPaper: {
 		padding: theme.spacing(2),

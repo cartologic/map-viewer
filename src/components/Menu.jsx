@@ -87,7 +87,7 @@ function SimpleMenu() {
                     <ListItemIcon>
                         <ImageIcon />
                     </ListItemIcon>
-                    <ListItemText primary="Legends" />
+                    <ListItemText primary="Legend" />
                 </MenuItem>
 
                 <MenuItem onClick={() => { context.exportMap(); handleMenuClose() }}>

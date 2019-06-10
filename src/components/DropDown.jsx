@@ -1,9 +1,10 @@
+import React from 'react';
 import IconButton from '@material-ui/core/IconButton'
 import Menu from '@material-ui/core/Menu'
-import MoreVertIcon from '@material-ui/icons/MoreVert'
+import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import PropTypes from 'prop-types'
-import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
+
 
 const ITEM_HEIGHT = 30
 export const guidGenerator = () => {
@@ -45,9 +46,8 @@ class DropDown extends React.Component {
                     aria-label="More"
                     aria-owns={anchorEl ? this.id : null}
                     aria-haspopup="true"
-                    onClick={this.handleClick}
-                >
-                    <MoreVertIcon />
+                    onClick={this.handleClick}>
+                    <MoreHorizIcon />
                 </IconButton>
                 <Menu
                     id={this.id}
@@ -59,8 +59,7 @@ class DropDown extends React.Component {
                             maxHeight: ITEM_HEIGHT * 5,
                             width: 200,
                         },
-                    }}
-                >
+                    }}>
                     {children}
                 </Menu>
             </div>

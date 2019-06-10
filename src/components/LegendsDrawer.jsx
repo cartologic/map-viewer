@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
@@ -6,8 +6,9 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import IconButton from '@material-ui/core/IconButton';
 import Divider from '@material-ui/core/Divider';
+import Typography from '@material-ui/core/Typography';
 
-import Legends from './Legend';
+import Legend from './Legend';
 
 
 const styles = theme => ({
@@ -19,11 +20,13 @@ const styles = theme => ({
         alignItems: 'center',
         padding: '0 8px',
         ...theme.mixins.toolbar,
-        justifyContent: 'flex-end',
+    },
+    backButton: {
+        marginLeft: 'auto'
     }
 });
 
-class LegendsDrawer extends React.Component {
+class LegendDrawer extends Component {
 
     render() {
 
@@ -34,7 +37,8 @@ class LegendsDrawer extends React.Component {
                 variant="persistent">
 
                 <div className={this.props.classes.drawerHeader}>
-                    <IconButton onClick={this.props.handleClose}>
+                    <Typography variant="h5" gutterBottom>Legend</Typography>
+                    <IconButton onClick={this.props.handleClose} className={this.props.classes.backButton}>
                         {this.props.theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
                     </IconButton>
                 </div>
@@ -42,7 +46,7 @@ class LegendsDrawer extends React.Component {
 
                 <div tabIndex={0} role="button">
                     <div className={this.props.classes.list}>
-                        <Legends/>
+                        <Legend />
                     </div>
                 </div>
             </Drawer>
@@ -50,8 +54,8 @@ class LegendsDrawer extends React.Component {
     }
 }
 
-LegendsDrawer.propTypes = {
+LegendDrawer.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles, { withTheme: true })(LegendsDrawer);
+export default withStyles(styles, { withTheme: true })(LegendDrawer);
