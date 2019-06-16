@@ -14,19 +14,50 @@ import FileSaver from 'file-saver'
 import LegendService from '../services/Legend'
 import MapConfigService from '../services/MapLoadService'
 import Mustache from 'mustache'
-import Overlay from 'ol/overlay'
+import Overlay from 'ol/Overlay'
+import Map from 'ol/Map'
+import Tile from 'ol/layer/Tile'
+import View from 'ol/View'
+import OSM from 'ol/source/OSM'
+import ZoomSlider from 'ol/control/ZoomSlider'
+import ScaleLine from 'ol/control/ScaleLine'
+import FullScreen from 'ol/control/FullScreen'
+import { defaults as defaultControls } from 'ol/control.js';
 import React from 'react'
 import ReactDOM from 'react-dom'
-import proj from 'ol/proj'
+import { register as registerProj4 } from 'ol/proj/proj4'
+import { fromLonLat } from 'ol/proj'
 import proj4 from 'proj4'
 
-proj.setProj4(proj4)
+
+registerProj4(proj4);
 
 class BasicViewer extends React.Component {
     constructor(props) {
         super(props)
+        let controls = []
+        controls.push(new ScaleLine())
+        controls.push(new ZoomSlider())
+        controls.push(new FullScreen({ source: "root" }))
+
         this.state = {
-            map: BasicViewerHelper.getMap(),
+            //map: BasicViewerHelper.getMap(),
+            map: new Map({
+                controls: defaultControls().extend(controls),
+                layers: [
+                    new Tile({
+                        title: 'OpenStreetMap',
+                        source: new OSM()
+                    })
+                ],
+                loadTilesWhileInteracting: true,
+                view: new View({
+                    center: fromLonLat([0, 0]),
+                    minZoom: 1,
+                    zoom: 3,
+                    maxZoom: 19,
+                })
+            }),
             featureIdentifyLoading: false,
             featureIdentifyResult: [],
             showPopup: false,
@@ -101,7 +132,7 @@ class BasicViewer extends React.Component {
         })
         return imagePromise
     }
-  
+
     save = () => {
         const { currentMap, map, mapLayers } = this.state
         const view = map.getView()

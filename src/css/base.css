@@ -171,6 +171,17 @@ html {
     width: 100%
 }
 
+.find-my-location-button{
+    background-color: white !important;
+    float: right;
+    padding: 3px !important;
+    z-index: 200;
+    position: fixed !important;
+    bottom: 30vh;
+    right: 1vh;
+    border-color: gray !important;
+}
+
 .paper {
     height: 100%;
     overflow-y: overlay;

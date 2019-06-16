@@ -1,4 +1,4 @@
-import Group from 'ol/layer/group'
+import Group from 'ol/layer/Group'
 import mergeImages from 'merge-images';
 import { resolveURL } from './utils'
 import { sourceMapping } from '../services/MapLoadService'

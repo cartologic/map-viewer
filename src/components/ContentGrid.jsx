@@ -12,6 +12,8 @@ import MapViewer from './MapViewer'
 import { BasicViewerContext } from '../context'
 import CartoviewPopup from './Popup'
 import GoogleLikeInput from './SearchInput'
+import GPSicon from '@material-ui/icons/GpsFixedTwoTone';
+import { GeoLocationButton } from '@terrestris/react-geo';
 
 
 const styles = theme => ({
@@ -54,6 +56,14 @@ class ContentGrid extends Component {
 						<CartoviewPopup />
 					</Grid>
 				</Grid>
+				<GeoLocationButton
+					onGeolocationChange={() => undefined}
+					map={this.context.map}
+					showMarker={true}
+					follow={true}
+					className="find-my-location-button">
+					<GPSicon style={{ color: 'black' }} />
+				</GeoLocationButton>
 				<CartoviewSnackBar />
 				<CustomizedSnackBar
 					open={(!mapSaving && mapSavingMessage !== null)}

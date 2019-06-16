@@ -1,48 +1,27 @@
-import Attribution from 'ol/attribution'
-import Base from 'ol/layer/base'
-import BasicViewerHelper from 'cartoview-sdk/helpers/BasicViewerHelper'
-import BingMaps from 'ol/source/bingmaps'
-import CartoDB from 'ol/source/cartodb'
-import Cluster from 'ol/source/cluster'
-import FeaturesHelper from 'cartoview-sdk/helpers/FeaturesHelper'
-import GeoJSON from 'ol/format/geojson'
-import Group from 'ol/layer/group'
-import Heatmap from 'ol/layer/heatmap'
-import Image from 'ol/layer/image'
-import ImageArcGISRest from 'ol/source/imagearcgisrest'
-import ImageCanvas from 'ol/source/imagecanvas'
-import ImageMapGuide from 'ol/source/imagemapguide'
-import ImageStatic from 'ol/source/imagestatic'
-import ImageVector from 'ol/source/imagevector'
-import ImageWMS from 'ol/source/imagewms'
-import KML from 'ol/format/kml';
-import Layer from 'ol/layer/layer'
-import OSM from 'ol/source/osm'
-import Raster from 'ol/source/raster'
-import Source from 'ol/source/source'
-import { default as SourceImage } from 'ol/source/image'
-import { default as SourceTile } from 'ol/source/tile'
-import { default as SourceVector } from 'ol/source/vector'
-import { default as SourceVectorTile } from 'ol/source/vectortile'
-import Stamen from 'ol/source/stamen'
-import StyleHelper from 'cartoview-sdk/helpers/StyleHelper'
-import Tile from 'ol/layer/tile'
-import TileArcGISRest from 'ol/source/tilearcgisrest'
-import TileDebug from 'ol/source/tiledebug'
-import TileImage from 'ol/source/tileimage'
-import TileJSON from 'ol/source/tilejson'
-import TileUTFGrid from 'ol/source/tileutfgrid'
-import TileWMS from 'ol/source/tilewms'
-import Vector from 'ol/layer/vector'
-import VectorTile from 'ol/layer/vectortile'
-import View from 'ol/view'
-import WMTS from 'ol/source/wmts'
-import XYZ from 'ol/source/xyz'
-import Zoomify from 'ol/source/zoomify'
-import axios from 'axios'
-import { getCRSFToken } from '../api/utils'
-import loadingstrategy from 'ol/loadingstrategy';
-import { default as olProj } from 'ol/proj'
+import Base from 'ol/layer/Base';
+import BasicViewerHelper from 'cartoview-sdk/helpers/BasicViewerHelper';
+import KML from 'ol/format/KML';
+import { default as SourceImage } from 'ol/source/Image';
+import { default as SourceTile } from 'ol/source/Tile';
+import { default as SourceVector } from 'ol/source/Vector';
+import { default as SourceVectorTile } from 'ol/source/VectorTile';
+import StyleHelper from 'cartoview-sdk/helpers/StyleHelper';
+import View from 'ol/View';
+import axios from 'axios';
+import { getCRSFToken } from '../api/utils';
+import { all, bbox } from 'ol/loadingstrategy';
+import FeaturesHelper from 'cartoview-sdk/helpers/FeaturesHelper';
+import GeoJSON from 'ol/format/GeoJSON';
+import { get as olProjGet, equivalent as olProjEquivalent } from 'ol/proj';
+import { Group, Heatmap, Image, Layer, Tile, Vector, VectorTile } from 'ol/layer'
+import {
+	BingMaps, CartoDB, Cluster, ImageStatic, ImageCanvas, ImageArcGISRest
+	, ImageMapGuide, ImageWMS, Raster, OSM, Source, Stamen, TileDebug,
+	TileArcGISRest, TileImage, TileJSON, TileWMS, WMTS, XYZ, Zoomify
+	, UTFGrid
+} from 'ol/source';
+
+
 export let sourceMapping = {
 	'BingMaps': BingMaps,
 	'CartoDB': CartoDB,
@@ -52,7 +31,7 @@ export let sourceMapping = {
 	'ImageCanvas': ImageCanvas,
 	'ImageMapGuide': ImageMapGuide,
 	'ImageStatic': ImageStatic,
-	'ImageVector': ImageVector,
+	//	'ImageVector': ImageVector,
 	'ImageWMS': ImageWMS,
 	'Stamen': Stamen,
 	'Raster': Raster,
@@ -62,7 +41,7 @@ export let sourceMapping = {
 	'TileDebug': TileDebug,
 	'TileImage': TileImage,
 	'TileJSON': TileJSON,
-	'TileUTFGrid': TileUTFGrid,
+	'TileUTFGrid': UTFGrid,
 	'TileWMS': TileWMS,
 	'Zoomify': Zoomify,
 	'SourceVectorTile': SourceVectorTile,
@@ -183,7 +162,7 @@ class MapConfigService {
 						onError()
 					})
 				},
-				strategy: notWFS ? loadingstrategy.all : loadingstrategy.bbox
+				strategy: notWFS ? all : bbox
 			})
 			s = source
 		} else if (sourceClass === TileArcGISRest) {
@@ -219,10 +198,10 @@ class MapConfigService {
 		let layer = new LayerClass({
 			source: this.getSource(layerJson)
 		})
-		if (layer_type == 'wfs') {
+		if (layer_type === 'wfs') {
 			layer.setStyle(this.styleHelper.styleFunction)
 		}
-		if (layer_type == 'arcgis_msl') {
+		if (layer_type === 'arcgis_msl') {
 			let extent = layerJson.bounding_box.map(coord => parseFloat(coord))
 			FeaturesHelper.getCRS(layerJson.projection.split(":").pop()).then(newCRS => {
 				extent = BasicViewerHelper.reprojectExtent(extent, this.map, layerJson.projection)
@@ -266,8 +245,8 @@ class MapConfigService {
 		const projCode = viewProj.split(':').pop()
 		FeaturesHelper.getCRS(projCode).then(newCRS => {
 			var view = map.getView(),
-				proj = olProj.get(viewConfig.projection);
-			if (proj && !olProj.equivalent(view.getProjection(), proj)) {
+				proj = olProjGet(viewConfig.projection);
+			if (proj && !olProjEquivalent(view.getProjection(), proj)) {
 				map.setView(new View(viewConfig))
 			} else {
 				view.setCenter(viewConfig.center)

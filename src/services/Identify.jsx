@@ -1,7 +1,9 @@
-import FeaturesHelper from 'cartoview-sdk/helpers/FeaturesHelper'
-import GeoJSON from 'ol/format/geojson'
-import LayersHelper from 'cartoview-sdk/helpers/LayersHelper'
-import axios from 'axios'
+import FeaturesHelper from 'cartoview-sdk/helpers/FeaturesHelper';
+import GeoJSON from 'ol/format/GeoJSON';
+import LayersHelper from 'cartoview-sdk/helpers/LayersHelper';
+import axios from 'axios';
+
+
 const geojsonFormat = new GeoJSON()
 class FeatureIdentify {
 	identify(map, evt) {
